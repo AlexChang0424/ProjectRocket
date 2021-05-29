@@ -10,6 +10,9 @@ public class Movement : MonoBehaviour
     [SerializeField] float thrustSpeed = 100f;
     [SerializeField] float rotateSpeed = 100f;
     [SerializeField] AudioClip mainEngine;
+    [SerializeField] ParticleSystem mainThruster;
+    [SerializeField] ParticleSystem leftThruster;
+    [SerializeField] ParticleSystem rightThruster;
     Rigidbody rb;
     AudioSource audioSource;
     // Start is called before the first frame update
@@ -30,30 +33,66 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            rb.AddRelativeForce((Vector3.up) * thrustSpeed * Time.deltaTime);
-            if (!audioSource.isPlaying)
-            {
-                audioSource.PlayOneShot(mainEngine);
-            }
+            Thrusting();
         }
         else
         {
-            audioSource.Stop();
+            NotThrusting();
         }
     }
-
     void ProcessRotation()
     {
         if (Input.GetKey(KeyCode.A))
         {
-            ApplyRotation(rotateSpeed);
+            LeftRotate();
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            ApplyRotation(-rotateSpeed);
+            RightRotate();
+        }
+        else
+        {
+            NotRotating();
         }
     }
-
+    void Thrusting()
+    {
+        rb.AddRelativeForce((Vector3.up) * thrustSpeed * Time.deltaTime);
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(mainEngine);
+        }
+        if (!mainThruster.isPlaying)
+        {
+            mainThruster.Play();
+        }
+    }
+    void NotThrusting()
+    {
+        audioSource.Stop();
+        mainThruster.Stop();
+    }
+    void LeftRotate()
+    {
+        ApplyRotation(rotateSpeed);
+        if (!rightThruster.isPlaying)
+        {
+            rightThruster.Play();
+        }
+    }
+    void RightRotate()
+    {
+        ApplyRotation(-rotateSpeed);
+        if (!leftThruster.isPlaying)
+        {
+            leftThruster.Play();
+        }
+    }
+    void NotRotating()
+    {
+        leftThruster.Stop();
+        rightThruster.Stop();
+    }
     void ApplyRotation(float rotationThisFrame)
     {
         rb.freezeRotation = true; // freezing rotation so we can manually rotate
