@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Under.unity
     guid: caa21957e25b99740a87cefca626a0e0
+  - enabled: 1
+    path: Assets/Scenes/Through.unity
+    guid: ab2edebb1eccb6e46a3c73247cb10b44
+  - enabled: 1
+    path: Assets/Scenes/twolayer.unity
+    guid: 0aafbf8c526ed694b8cd1090df78e63e
   m_configObjects: {}

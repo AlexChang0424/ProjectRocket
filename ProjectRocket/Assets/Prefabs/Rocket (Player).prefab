@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7894686237442888819}
   - component: {fileID: 4533942868675150725}
   - component: {fileID: 132397287638632979}
+  - component: {fileID: 7868921659134739413}
   m_Layer: 0
   m_Name: Rocket (Player)
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 918203853115033514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -44.5, y: 5, z: 0}
-  m_LocalScale: {x: 0.76065624, y: 3.3597898, z: 1.227881}
+  m_LocalScale: {x: 0.6116741, y: 2.7017412, z: 0.98738813}
   m_Children:
   - {fileID: 3586011483786013762}
   - {fileID: 850603536273873124}
@@ -215,6 +216,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.5688093, y: 0.6282605, z: 1}
   m_Center: {x: -0.0014827644, y: 0.004715763, z: 0}
+--- !u!114 &7868921659134739413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918203853115033514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a2e1c3b6ec2694ba47cc545fea7f0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5522920892818097293
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +510,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7369805860242660565}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.2, y: 0.69, z: -0.11}
+  m_LocalPosition: {x: -0.2, y: 0.88, z: -0.11}
   m_LocalScale: {x: 1.3146544, y: 0.29763764, z: 0.81441116}
   m_Children: []
   m_Father: {fileID: 8220405877181997664}
